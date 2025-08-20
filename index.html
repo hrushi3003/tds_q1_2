@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quarterly Earnings — Interactive RevealJS Deck</title>
+
+  <!-- RevealJS core & theme via CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="theme" />
+
+  <!-- Code syntax highlighting (uses highlight.js via Reveal plugin) -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.css">
+
+  <style>
+    .footer {
+      position: absolute; bottom: 12px; left: 24px; font-size: 14px; opacity: 0.7;
+    }
+    .brand { font-weight: 700; letter-spacing: .02em; }
+    .kpi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .card { border-radius: 16px; padding: 18px; background: rgba(255,255,255,.08); }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide with email included -->
+      <section>
+        <h2 class="brand">Quarterly Earnings Report (Qx FY2025)</h2>
+        <p>Technical Consultant — Major Financial Institution</p>
+        <p><strong>Contact:</strong> 23f2004936@ds.study.iitm.ac.in</p>
+        <p class="fragment">Modern, interactive presentation powered by RevealJS</p>
+        <p class="fragment">Optimized for stakeholders & the web</p>
+        <aside class="notes">
+          Welcome everyone. This deck showcases interactive capabilities: fragments, markdown, math, code samples, and speaker notes. Use the arrow keys to navigate. Press 'S' for speaker view during the live talk.
+        </aside>
+      </section>
+
+      <!-- Agenda using fragments for staged reveal -->
+      <section>
+        <h3>Agenda</h3>
+        <ul>
+          <li class="fragment">Performance Highlights</li>
+          <li class="fragment">Financials & Ratios</li>
+          <li class="fragment">Technology & Risk Updates</li>
+          <li class="fragment">Outlook & Guidance</li>
+        </ul>
+        <aside class="notes">Each bullet reveals on click (fragment animations). Keep pacing brisk; elaborate only on questions that arise.</aside>
+      </section>
+
+      <!-- Markdown slide (required) -->
+      <section data-markdown>
+        <textarea data-template>
+### Performance Highlights *(Markdown slide)*
+
+- **Revenue Growth:** +7.8% YoY  
+- **Net Interest Margin (NIM):** 3.21%  
+- **Cost-to-Income:** 47.5% *(improved)*  
+- **Digital Adoption:** 82% of retail transactions  
+
+> Takeaway: Operating leverage improved as digital share expanded.
+
+*Note:* Numbers above are placeholders for demo. Replace with actuals before publishing.
+        </textarea>
+        <aside class="notes">Demonstrates native markdown rendering via the plugin. Update the placeholder metrics with the finalized quarterly numbers.</aside>
+      </section>
+
+      <!-- KPI cards with gentle visual layout -->
+      <section>
+        <h3>Key KPIs</h3>
+        <div class="kpi">
+          <div class="card fragment"><h4>Deposits</h4><p>+5.2% QoQ</p></div>
+          <div class="card fragment"><h4>Advances</h4><p>+4.1% QoQ</p></div>
+          <div class="card fragment"><h4>CASA Ratio</h4><p>42.3%</p></div>
+        </div>
+        <aside class="notes">Progressively reveal the KPIs; emphasize sustainable growth over absolute expansion.</aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h3>Code Sample: Compute NPV (Python)</h3>
+        <pre><code class="language-python">from typing import Iterable
+
+def npv(rate: float, cashflows: Iterable[float]) -> float:
+    """Net Present Value given a discount rate and cash flow series."""
+    return sum(cf / ((1 + rate) ** t) for t, cf in enumerate(cashflows, start=1))
+
+# Example usage
+print(npv(0.10, [100, 120, 150, 200]))
+</code></pre>
+        <aside class="notes">Highlight that code blocks are auto-styled. You can demo quick what-if calculations if needed.</aside>
+      </section>
+
+      <!-- Math slide with financial formulas -->
+      <section>
+        <h3>Financial Mathematics</h3>
+        <p>Net Present Value (NPV):</p>
+        <p>\[ \mathrm{NPV} = \sum_{t=1}^{T} \frac{CF_t}{(1+r)^t} - C_0 \]</p>
+        <p>Return on Equity (ROE):</p>
+        <p>\[ \mathrm{ROE} = \frac{\text{Net Income}}{\text{Average Shareholders' Equity}} \times 100\% \]</p>
+        <aside class="notes">Math typeset via KaTeX. Keep notation consistent with the financial statements.</aside>
+      </section>
+
+      <!-- Notes demo + closing -->
+      <section>
+        <h3>Risk & Compliance Snapshot</h3>
+        <ul>
+          <li class="fragment">Credit cost within guidance</li>
+          <li class="fragment">Stage 3 assets stable QoQ</li>
+          <li class="fragment">Capital adequacy & liquidity buffers robust</li>
+        </ul>
+        <aside class="notes">If questions dive deep, defer detailed annexures to the appendix or provide a link to the investor pack.</aside>
+      </section>
+
+      <section>
+        <h3>Thank You</h3>
+        <p>Contact: <a href="mailto:23f2004936@ds.study.iitm.ac.in">23f2004936@ds.study.iitm.ac.in</a></p>
+        <p class="footer">Press <kbd>S</kbd> for speaker notes • Press <kbd>F</kbd> for fullscreen</p>
+        <aside class="notes">Invite Q&A. Mention that the deck is hosted on GitHub Pages and can be viewed on any device.</aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- RevealJS and plugins -->
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
+
+  <script>
+    // Initialize Reveal with Markdown, Highlight, Notes, and Math (KaTeX)
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ],
+      // KaTeX configuration for math plugin
+      math: {
+        mathjax: null,
+        config: 'TeX-AMS_HTML',
+        // KaTeX CDN is auto-managed by the plugin; explicit options here if needed
+      }
+    });
+  </script>
+</body>
+</html>
